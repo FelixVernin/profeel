@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profeel - Testez notre ATS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="upload-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/Presentation_fin_P1.png" alt="Profeel Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="upload.html" class="active">Tester Profeel</a></li>
+                <li><a href="dashboard.html">Dashboard RH</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="upload-main">
+        <section class="upload-hero">
+            <h1>Testez Profeel</h1>
+            <p class="hero-description">
+                Comparez comment votre CV est évalué par un ATS classique versus Profeel.
+                Découvrez les différences de scoring en temps réel.
+            </p>
+        </section>
+
+        <!-- CV Selection -->
+        <section class="cv-selection">
+            <h2>Choisissez un profil à tester</h2>
+            <p class="section-description">Sélectionnez un des profils de candidats ci-dessous ou uploadez votre propre CV</p>
+            
+            <div class="cv-cards-container">
+                <!-- CV 1 -->
+                <div class="cv-card" data-cv="sophie">
+                    <div class="cv-card-header">
+                        <div class="cv-avatar">👨‍💼</div>
+                        <div class="cv-info">
+                            <h3>Sophie Dubois</h3>
+                            <p class="cv-role">Développeuse Web Junior</p>
+                        </div>
+                    </div>
+                    <div class="cv-details">
+                        <div class="cv-detail-item">
+                            <span class="label">Âge:</span>
+                            <span class="value">42 ans</span>
+                        </div>
+                        <div class="cv-detail-item">
+                            <span class="label">Formation:</span>
+                            <span class="value">Bootcamp Dev Web (reconversion)</span>
+                        </div>
+                        <div class="cv-detail-item">
+                            <span class="label">Expérience:</span>
+                            <span class="value">6 mois en développement</span>
+                        </div>
+                        <div class="cv-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                        </div>
+                    </div>
+                    <button class="select-cv-btn" onclick="selectCV('sophie')">
+                        <span>Tester ce profil</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+
+                <!-- CV 2 -->
+                <div class="cv-card" data-cv="karim">
+                    <div class="cv-card-header">
+                        <div class="cv-avatar">👨‍🎓</div>
+                        <div class="cv-info">
+                            <h3>Karim El Mansouri</h3>
+                            <p class="cv-role">Développeur Backend</p>
+                        </div>
+                    </div>
+                    <div class="cv-details">
+                        <div class="cv-detail-item">
+                            <span class="label">Âge:</span>
+                            <span class="value">27 ans</span>
+                        </div>
+                        <div class="cv-detail-item">
+                            <span class="label">Formation:</span>
+                            <span class="value">Master Informatique (Maroc)</span>
+                        </div>
+                        <div class="cv-detail-item">
+                            <span class="label">Expérience:</span>
+                            <span class="value">2 ans</span>
+                        </div>
+                        <div class="cv-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <button class="select-cv-btn" onclick="selectCV('karim')">
+                        <span>Tester ce profil</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+
+                <!-- CV 3 -->
+                <div class="cv-card" data-cv="marie">
+                    <div class="cv-card-header">
+                        <div class="cv-avatar">👩‍💻</div>
+                        <div class="cv-info">
+                            <h3>Marie Chen</h3>
+                            <p class="cv-role">Data Scientist Senior</p>
+                        </div>
+                    </div>
+                    <div class="cv-details">
+                        <div class="cv-detail-item">
+                            <span class="label">Âge:</span>
+                            <span class="value">35 ans</span>
+                        </div>
+                        <div class="cv-detail-item">
+                            <span class="label">Formation:</span>
+                            <span class="value">Doctorat en IA</span>
+                        </div>
+                        <div class="cv-detail-item">
+                            <span class="label">Expérience:</span>
+                            <span class="value">5 ans</span>
+                        </div>
+                        <div class="cv-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">NLP</span>
+                        </div>
+                    </div>
+                    <button class="select-cv-btn" onclick="selectCV('marie')">
+                        <span>Tester ce profil</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+
+                <!-- CV 4 -->
+                <div class="cv-card" data-cv="lucas">
+                    <div class="cv-card-header">
+                        <div class="cv-avatar">👨‍🔧</div>
+                        <div class="cv-info">
+                            <h3>Lucas Moreau</h3>
+                            <p class="cv-role">Développeur Full-Stack</p>
+                        </div>
+                    </div>
+                    <div class="cv-details">
+                        <div class="cv-detail-item">
+                            <span class="label">Âge:</span>
+                            <span class="value">28 ans</span>
+                        </div>
+                        <div class="cv-detail-item">
+                            <span class="label">Formation:</span>
+                            <span class="value">Autodidacte (Bac Pro)</span>
+                        </div>
+                        <div class="cv-detail-item">
+                            <span class="label">Expérience:</span>
+                            <span class="value">4 ans freelance</span>
+                        </div>
+                        <div class="cv-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">Vue.js</span>
+                        </div>
+                    </div>
+                    <button class="select-cv-btn" onclick="selectCV('lucas')">
+                        <span>Tester ce profil</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Custom CV -->
+        <section class="custom-upload">
+            <h2>Ou uploadez votre propre CV</h2>
+            <div class="upload-container">
+                <div class="upload-box" id="uploadBox">
+                    <div class="upload-icon">📄</div>
+                    <h3>Déposez votre CV ici</h3>
+                    <p>ou cliquez pour sélectionner un fichier</p>
+                    <p class="file-info">Formats acceptés: PDF, DOC, DOCX (max 5MB)</p>
+                    <input type="file" id="fileInput" accept=".pdf,.doc,.docx" style="display: none;">
+                </div>
+                <div id="filePreview" class="file-preview" style="display: none;">
+                    <div class="file-preview-content">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name" id="fileName"></span>
+                        <button class="remove-file" onclick="removeFile()">✕</button>
+                    </div>
+                    <button class="analyze-btn" onclick="analyzeCustomCV()">
+                        Analyser ce CV
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Profeel - Projet ESIEE Paris</p>
+            <p class="footer-contact">📧 Contact : <a href="mailto:contact@profeel.online">contact@profeel.online</a></p>
+            <p class="footer-subtitle">Powered by AI & LLM Technology</p>
+        </div>
+    </footer>
+
+    <script src="js/cv-data.js"></script>
+    <script src="js/ats-engine.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>

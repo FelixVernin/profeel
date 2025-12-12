@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profeel - Résultats de l'Analyse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="results-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/Presentation_fin_P1.png" alt="Profeel Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="upload.html">Tester Profeel</a></li>
+                <li><a href="dashboard.html">Dashboard RH</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="results-main">
+        <!-- Candidate Profile -->
+        <section class="candidate-profile" id="candidateProfile">
+            <div class="profile-header">
+                <div class="profile-avatar" id="profileAvatar">👤</div>
+                <div class="profile-info">
+                    <h1 id="candidateName">Nom du Candidat</h1>
+                    <p class="profile-role" id="candidateRole">Poste recherché</p>
+                    <div class="profile-tags" id="profileTags"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Results -->
+        <section class="comparison-results">
+            <h2 class="section-title">Comparaison des Analyses ATS</h2>
+            <p class="section-subtitle">Découvrez comment les deux systèmes évaluent ce profil</p>
+
+            <div class="results-container">
+                <!-- ATS Classique Results -->
+                <div class="result-card classic-ats">
+                    <div class="result-header">
+                        <h3>⚙️ ATS Classique</h3>
+                        <span class="ats-label old">Ancienne génération</span>
+                    </div>
+                    
+                    <div class="score-section">
+                        <div class="score-circle classic">
+                            <svg class="score-ring" width="160" height="160">
+                                <circle class="score-ring-bg" cx="80" cy="80" r="70" />
+                                <circle class="score-ring-fill" id="classicScoreRing" cx="80" cy="80" r="70" />
+                            </svg>
+                            <div class="score-text">
+                                <span class="score-value" id="classicScore">0</span>
+                                <span class="score-max">/100</span>
+                            </div>
+                        </div>
+                        <div class="verdict-badge" id="classicVerdict">
+                            <span class="verdict-icon">❌</span>
+                            <span class="verdict-text">Candidature Rejetée</span>
+                        </div>
+                    </div>
+
+                    <div class="analysis-details">
+                        <h4>📋 Analyse détaillée</h4>
+                        <div class="reasons-section negative">
+                            <h5>Points pénalisants:</h5>
+                            <ul class="reasons-list" id="classicNegatives"></ul>
+                        </div>
+                        <div class="reasons-section positive" id="classicPositivesSection" style="display: none;">
+                            <h5>Points positifs:</h5>
+                            <ul class="reasons-list" id="classicPositives"></ul>
+                        </div>
+                    </div>
+
+                    <div class="methodology">
+                        <h5>🔍 Méthodologie</h5>
+                        <p>Analyse basée sur des mots-clés stricts, critères rigides et filtres automatiques sans compréhension contextuelle.</p>
+                    </div>
+                </div>
+
+                <!-- VS Divider -->
+                <div class="vs-separator">
+                    <div class="vs-circle">VS</div>
+                    <div class="vs-line"></div>
+                </div>
+
+                <!-- Profeel Results -->
+                <div class="result-card inclusive-ats">
+                    <div class="result-header">
+                        <h3>🤖 Profeel</h3>
+                        <span class="ats-label new">IA Générative + LLM</span>
+                    </div>
+                    
+                    <div class="score-section">
+                        <div class="score-circle inclusive">
+                            <svg class="score-ring" width="160" height="160">
+                                <circle class="score-ring-bg" cx="80" cy="80" r="70" />
+                                <circle class="score-ring-fill" id="inclusiveScoreRing" cx="80" cy="80" r="70" />
+                            </svg>
+                            <div class="score-text">
+                                <span class="score-value" id="inclusiveScore">0</span>
+                                <span class="score-max">/100</span>
+                            </div>
+                        </div>
+                        <div class="verdict-badge" id="inclusiveVerdict">
+                            <span class="verdict-icon">✅</span>
+                            <span class="verdict-text">Candidature Recommandée</span>
+                        </div>
+                    </div>
+
+                    <div class="analysis-details">
+                        <h4>📋 Analyse détaillée</h4>
+                        <div class="reasons-section positive">
+                            <h5>Forces identifiées:</h5>
+                            <ul class="reasons-list" id="inclusivePositives"></ul>
+                        </div>
+                        <div class="reasons-section improvement">
+                            <h5>Axes d'amélioration:</h5>
+                            <ul class="reasons-list" id="inclusiveImprovements"></ul>
+                        </div>
+                    </div>
+
+                    <div class="methodology">
+                        <h5>🔍 Méthodologie</h5>
+                        <p>Analyse sémantique avancée par IA, compréhension contextuelle, élimination des biais discriminatoires, évaluation holistique des compétences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Differences -->
+        <section class="key-differences">
+            <h2 class="section-title">🎯 Différences Clés</h2>
+            <div class="differences-grid" id="differencesList"></div>
+        </section>
+
+        <!-- Detailed Analysis -->
+        <section class="detailed-analysis">
+            <h2 class="section-title">📊 Analyse Approfondie</h2>
+            
+            <div class="analysis-tabs">
+                <button class="tab-btn active" onclick="switchTab('competences')">Compétences</button>
+                <button class="tab-btn" onclick="switchTab('experience')">Expérience</button>
+                <button class="tab-btn" onclick="switchTab('formation')">Formation</button>
+                <button class="tab-btn" onclick="switchTab('soft-skills')">Soft Skills</button>
+            </div>
+
+            <div class="tab-content active" id="competences">
+                <div class="competences-comparison" id="competencesContent"></div>
+            </div>
+
+            <div class="tab-content" id="experience">
+                <div class="experience-timeline" id="experienceContent"></div>
+            </div>
+
+            <div class="tab-content" id="formation">
+                <div class="formation-details" id="formationContent"></div>
+            </div>
+
+            <div class="tab-content" id="soft-skills">
+                <div class="soft-skills-radar" id="softSkillsContent"></div>
+            </div>
+        </section>
+
+        <!-- Actions -->
+        <section class="actions-section">
+            <h2 class="section-title">Que faire ensuite ?</h2>
+            <div class="actions-grid">
+                <div class="action-card">
+                    <div class="action-icon">🔄</div>
+                    <h3>Tester un autre profil</h3>
+                    <p>Comparez d'autres CV pour voir les différences</p>
+                    <a href="upload.html" class="action-btn">Nouveau test</a>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">📥</div>
+                    <h3>Télécharger le rapport</h3>
+                    <p>Exportez cette analyse en PDF</p>
+                    <button class="action-btn" onclick="downloadReport()">Télécharger</button>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">📧</div>
+                    <h3>Partager les résultats</h3>
+                    <p>Envoyez cette analyse par email</p>
+                    <button class="action-btn" onclick="shareResults()">Partager</button>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">🏠</div>
+                    <h3>Retour à l'accueil</h3>
+                    <p>Découvrez plus sur Profeel</p>
+                    <a href="index.html" class="action-btn">Accueil</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Profeel - Projet ESIEE Paris</p>
+            <p class="footer-contact">📧 Contact : <a href="mailto:contact@profeel.online">contact@profeel.online</a></p>
+            <p class="footer-subtitle">Powered by AI & LLM Technology</p>
+        </div>
+    </footer>
+
+    <script src="js/cv-data.js"></script>
+    <script src="js/ats-engine.js"></script>
+    <script src="js/results.js"></script>
+</body>
+</html>

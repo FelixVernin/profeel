@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profeel - Tableau de bord RH</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/Presentation_fin_P1.png" alt="Profeel Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="dashboard.html" class="active">Tableau de bord</a></li>
+                <li><a href="#" class="user-profile">👤 Sophie Durand</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dashboard Hero -->
+    <section class="dashboard-hero">
+        <div class="welcome-section">
+            <h1>Bienvenue, Sophie 👋</h1>
+            <p class="subtitle">Voici un aperçu de vos campagnes de recrutement</p>
+        </div>
+        <div class="quick-actions">
+            <button class="action-btn primary">➕ Nouveau poste</button>
+            <button class="action-btn secondary">📤 Importer CVs</button>
+        </div>
+    </section>
+
+    <!-- Statistics Overview -->
+    <section class="dashboard-stats">
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">📋</span>
+                <h3>Postes actifs</h3>
+            </div>
+            <div class="stat-value">12</div>
+            <div class="stat-change positive">+3 ce mois</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">👥</span>
+                <h3>Candidatures</h3>
+            </div>
+            <div class="stat-value">247</div>
+            <div class="stat-change positive">+45 cette semaine</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">✅</span>
+                <h3>Présélectionnés</h3>
+            </div>
+            <div class="stat-value">68</div>
+            <div class="stat-change">27% du total</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">⚖️</span>
+                <h3>Biais évités</h3>
+            </div>
+            <div class="stat-value">94%</div>
+            <div class="stat-change positive">+8% vs ATS classique</div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="dashboard-content">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-section">
+                <h3>Filtres</h3>
+                <div class="filter-group">
+                    <label>
+                        <input type="checkbox" checked> Candidatures récentes
+                    </label>
+                    <label>
+                        <input type="checkbox"> Entretiens planifiés
+                    </label>
+                    <label>
+                        <input type="checkbox"> En attente de décision
+                    </label>
+                    <label>
+                        <input type="checkbox"> Archivés
+                    </label>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3>Départements</h3>
+                <div class="filter-group">
+                    <label>
+                        <input type="radio" name="dept" checked> Tous
+                    </label>
+                    <label>
+                        <input type="radio" name="dept"> IT / Développement
+                    </label>
+                    <label>
+                        <input type="radio" name="dept"> Marketing
+                    </label>
+                    <label>
+                        <input type="radio" name="dept"> Ventes
+                    </label>
+                    <label>
+                        <input type="radio" name="dept"> RH
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Job Listings -->
+        <main class="dashboard-main">
+            <div class="section-header">
+                <h2>Postes ouverts</h2>
+                <div class="view-options">
+                    <button class="view-btn active">📊 Tableau</button>
+                    <button class="view-btn">📋 Liste</button>
+                </div>
+            </div>
+
+            <!-- Job Card 1 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="job-title-section">
+                        <h3>Développeur Full-Stack Senior</h3>
+                        <span class="job-badge urgent">🔥 Urgent</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-date">Publié il y a 5 jours</span>
+                        <button class="job-menu-btn">⋮</button>
+                    </div>
+                </div>
+                <div class="job-info">
+                    <span class="info-item">📍 Paris (Hybride)</span>
+                    <span class="info-item">💼 CDI</span>
+                    <span class="info-item">💰 55-70k€</span>
+                </div>
+                <div class="job-stats">
+                    <div class="stat-mini">
+                        <strong>42</strong> candidatures
+                    </div>
+                    <div class="stat-mini">
+                        <strong>12</strong> présélectionnés
+                    </div>
+                    <div class="stat-mini">
+                        <strong>3</strong> entretiens
+                    </div>
+                </div>
+                <div class="candidates-preview">
+                    <h4>Meilleurs candidats <span class="ai-badge">✨ IA</span></h4>
+                    <div class="candidate-mini">
+                        <div class="candidate-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">KE</div>
+                        <div class="candidate-info">
+                            <strong>Karim El Mansouri</strong>
+                            <div class="score-comparison">
+                                <span class="score-badge profeel">Profeel: 92/100</span>
+                                <span class="score-badge classic">ATS classique: 34/100</span>
+                            </div>
+                            <p class="candidate-highlight">🎯 Diplôme étranger (Maroc) • 5 ans exp • React, Node.js expert</p>
+                        </div>
+                        <button class="view-profile-btn">Voir le profil</button>
+                    </div>
+                    <div class="candidate-mini">
+                        <div class="candidate-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">MC</div>
+                        <div class="candidate-info">
+                            <strong>Marie Chen</strong>
+                            <div class="score-comparison">
+                                <span class="score-badge profeel">Profeel: 88/100</span>
+                                <span class="score-badge classic">ATS classique: 45/100</span>
+                            </div>
+                            <p class="candidate-highlight">🎓 Doctorat • Surqualifiée mais motivée • Python, ML</p>
+                        </div>
+                        <button class="view-profile-btn">Voir le profil</button>
+                    </div>
+                    <div class="candidate-mini">
+                        <div class="candidate-avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">LM</div>
+                        <div class="candidate-info">
+                            <strong>Lucas Moreau</strong>
+                            <div class="score-comparison">
+                                <span class="score-badge profeel">Profeel: 85/100</span>
+                                <span class="score-badge classic">ATS classique: 28/100</span>
+                            </div>
+                            <p class="candidate-highlight">💻 Autodidacte • Portfolio impressionnant • JavaScript, Vue.js</p>
+                        </div>
+                        <button class="view-profile-btn">Voir le profil</button>
+                    </div>
+                </div>
+                <div class="ai-insights">
+                    <h4>💡 Insights IA</h4>
+                    <ul class="insights-list">
+                        <li>✅ 3 candidats avec parcours atypiques auraient été rejetés par un ATS classique</li>
+                        <li>⚖️ Aucun biais détecté dans la présélection</li>
+                        <li>📈 Le vivier de talents s'est élargi de 58% grâce à l'analyse inclusive</li>
+                    </ul>
+                </div>
+                <button class="view-all-btn">Voir tous les candidats →</button>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="job-title-section">
+                        <h3>Chef de Projet Marketing Digital</h3>
+                        <span class="job-badge normal">📋 Normal</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-date">Publié il y a 12 jours</span>
+                        <button class="job-menu-btn">⋮</button>
+                    </div>
+                </div>
+                <div class="job-info">
+                    <span class="info-item">📍 Lyon</span>
+                    <span class="info-item">💼 CDI</span>
+                    <span class="info-item">💰 40-50k€</span>
+                </div>
+                <div class="job-stats">
+                    <div class="stat-mini">
+                        <strong>38</strong> candidatures
+                    </div>
+                    <div class="stat-mini">
+                        <strong>9</strong> présélectionnés
+                    </div>
+                    <div class="stat-mini">
+                        <strong>2</strong> entretiens
+                    </div>
+                </div>
+                <div class="candidates-preview">
+                    <h4>Meilleurs candidats <span class="ai-badge">✨ IA</span></h4>
+                    <div class="candidate-mini">
+                        <div class="candidate-avatar" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">SD</div>
+                        <div class="candidate-info">
+                            <strong>Sophie Dubois</strong>
+                            <div class="score-comparison">
+                                <span class="score-badge profeel">Profeel: 96/100</span>
+                                <span class="score-badge classic">ATS classique: 52/100</span>
+                            </div>
+                            <p class="candidate-highlight">🔄 Reconversion pro • Expérience riche • Compétences transférables</p>
+                        </div>
+                        <button class="view-profile-btn">Voir le profil</button>
+                    </div>
+                </div>
+                <div class="ai-insights">
+                    <h4>💡 Insights IA</h4>
+                    <ul class="insights-list">
+                        <li>✅ La candidate en reconversion a un score 44 pts supérieur avec Profeel</li>
+                        <li>⚖️ Pas de discrimination liée à l'âge détectée</li>
+                        <li>🎯 Compétences transférables valorisées</li>
+                    </ul>
+                </div>
+                <button class="view-all-btn">Voir tous les candidats →</button>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="job-title-section">
+                        <h3>Data Scientist Junior</h3>
+                        <span class="job-badge normal">📋 Normal</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-date">Publié il y a 8 jours</span>
+                        <button class="job-menu-btn">⋮</button>
+                    </div>
+                </div>
+                <div class="job-info">
+                    <span class="info-item">📍 Remote</span>
+                    <span class="info-item">💼 CDD 12 mois</span>
+                    <span class="info-item">💰 38-45k€</span>
+                </div>
+                <div class="job-stats">
+                    <div class="stat-mini">
+                        <strong>67</strong> candidatures
+                    </div>
+                    <div class="stat-mini">
+                        <strong>18</strong> présélectionnés
+                    </div>
+                    <div class="stat-mini">
+                        <strong>5</strong> entretiens
+                    </div>
+                </div>
+                <div class="ai-insights">
+                    <h4>💡 Insights IA</h4>
+                    <ul class="insights-list">
+                        <li>📊 Vivier de talents diversifié avec 45% de profils atypiques</li>
+                        <li>⚖️ Score d'inclusivité : 97/100</li>
+                        <li>✨ 8 candidats supplémentaires identifiés grâce à l'IA</li>
+                    </ul>
+                </div>
+                <button class="view-all-btn">Voir tous les candidats →</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- AI Assistant Float -->
+    <div class="ai-assistant">
+        <button class="ai-assistant-btn">
+            <span class="assistant-icon">🤖</span>
+            <span class="assistant-text">Assistant IA</span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Profeel - Projet ESIEE Paris</p>
+            <p class="footer-subtitle">Powered by AI & LLM Technology</p>
+        </div>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -52,7 +52,7 @@ nav {
 }
 
 .logo-img {
-    height: 50px;
+    height: 60px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -852,6 +852,251 @@ footer {
 .footer-subtitle {
     opacity: 0.7;
     font-size: 0.9rem;
+}
+
+/* LLM Ranking Section */
+.ranking {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.affinity-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.affinity-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.affinity-title.excellent {
+    background: linear-gradient(135deg, #06d6a0, #05b084);
+    color: white;
+}
+
+.affinity-title.good {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+}
+
+.affinity-title.medium {
+    background: linear-gradient(135deg, #FFA726, #FB8C00);
+    color: white;
+}
+
+.affinity-title.bad {
+    background: linear-gradient(135deg, #ef476f, #d63a5e);
+    color: white;
+}
+
+.affinity-title.very-bad {
+    background: linear-gradient(135deg, #8B0000, #660000);
+    color: white;
+}
+
+.ranking-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.ranking-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ranking-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--light-text);
+}
+
+.ranking-card.gold::before {
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+}
+
+.ranking-card.silver::before {
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+}
+
+.ranking-card.bronze::before {
+    background: linear-gradient(90deg, #FFA726, #FB8C00);
+}
+
+.ranking-card.standard::before {
+    background: linear-gradient(90deg, #FFA726, #FB8C00);
+}
+
+.ranking-card.low::before {
+    background: linear-gradient(90deg, #ef476f, #d63a5e);
+}
+
+.ranking-card.very-low::before {
+    background: linear-gradient(90deg, #8B0000, #660000);
+}
+
+.ranking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.rank-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.ranking-card.gold .rank-badge {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+}
+
+.ranking-card.silver .rank-badge {
+    background: linear-gradient(135deg, #C0C0C0, #808080);
+}
+
+.ranking-card.bronze .rank-badge {
+    background: linear-gradient(135deg, #CD7F32, #8B4513);
+}
+
+.ranking-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-text);
+}
+
+.score-display {
+    text-align: center;
+    margin: 0.8rem 0;
+}
+
+.score-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.ranking-card.gold .score-number {
+    color: #06d6a0;
+}
+
+.ranking-card.silver .score-number {
+    color: #4CAF50;
+}
+
+.ranking-card.bronze .score-number,
+.ranking-card.standard .score-number {
+    color: #FFA726;
+}
+
+.ranking-card.low .score-number {
+    color: #ef476f;
+}
+
+.ranking-card.very-low .score-number {
+    color: #8B0000;
+}
+
+.score-label {
+    font-size: 0.8rem;
+    color: var(--light-text);
+    margin-top: 0.3rem;
+}
+
+.ranking-criteria {
+    margin: 2rem 0;
+}
+
+.criteria-item {
+    margin-bottom: 1.5rem;
+}
+
+.criteria-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.criteria-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+}
+
+.criteria-fill {
+    height: 100%;
+    background: var(--gradient-1);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.criteria-value {
+    font-size: 0.85rem;
+    color: var(--light-text);
+    font-weight: 600;
+}
+
+.ranking-comment {
+    margin-top: 0.8rem;
+    padding: 0.6rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--light-text);
+    line-height: 1.4;
+}
+
+.ranking-methodology {
+    max-width: 900px;
+    margin: 2.5rem auto 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.ranking-methodology h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.ranking-methodology p {
+    color: var(--light-text);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Statistics Section - Icon Styles */
+.stat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
 }
 
 /* Animations */

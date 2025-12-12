@@ -14,8 +14,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.01,
+    rootMargin: '0px 0px 200px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        el.style.transition = `all 0.3s ease ${index * 0.05}s`;
         observer.observe(el);
     });
 });
